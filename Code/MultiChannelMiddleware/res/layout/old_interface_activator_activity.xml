@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <CheckBox
+        android:id="@+id/checkBoxBarcodes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Barcodes"/>
+
+    <CheckBox
+        android:id="@+id/checkBoxBluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bluetooth" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMobileInet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile Internet" />
+
+	<CheckBox
+        android:id="@+id/checkBoxNFC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NFC" />
+    
+    <CheckBox
+        android:id="@+id/checkBoxSMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SMS" />
+    
+	<CheckBox
+        android:id="@+id/checkBoxWifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wifi" />
+
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true">
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speichern" android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abbrechen" android:layout_weight="1"/>
+
+</LinearLayout>
+
+</RelativeLayout>

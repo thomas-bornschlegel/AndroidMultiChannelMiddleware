@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textViewHandshakeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:text="@string/handshake_title"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textViewHandshakeCurrentMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewHandshakeTitle"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:text="@string/handshake_current_msg" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSelectInterface"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewHandshakeCurrentMessage"
+        >
+
+        <TextView
+            android:id="@+id/textViewSendVia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/buttonSelectInterface"
+            android:text="@string/send_via"
+            android:ems="10" >
+
+        </TextView>
+
+        <Button
+            android:id="@+id/buttonSelectInterface"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="onChangeInterfaceClicked"
+            android:text="@string/button_change_interface" />
+    </RelativeLayout>
+    
+    
+    <LinearLayout
+        android:id="@+id/linearLayoutSendReceiveButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayoutSelectInterface"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/buttonHandshake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:onClick="onButtonSendClicked"
+            android:text="@string/button_handshake_send" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonContinue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayoutSendReceiveButtons"
+        android:enabled="false"
+        android:onClick="onButtonContinueClicked"
+        android:text="@string/button_continue" />
+
+    <ListView
+        android:id="@+id/listViewChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayoutInterfaceSelector"
+        android:layout_below="@+id/buttonContinue" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutInterfaceSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_interface"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/radioBarcodes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/interface_barcodes" />
+
+            <RadioButton
+                android:id="@+id/radioBluetooth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/interface_bluetooth" />
+
+            <RadioButton
+                android:id="@+id/radioIpBased"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/interface_ip_based" />
+
+            <RadioButton
+                android:id="@+id/radioNfc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/interface_nfc" />
+
+            <RadioButton
+                android:id="@+id/radioSms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/interface_sms" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/buttonScanBarcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onScanBarcodeClicked"
+            android:text="@string/button_scan_barcode" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textViewHandshakeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:text="@string/share_key_title"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSendReceiveButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewHandshakeTitle"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/buttonKeyShare"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onShareKeyButtonClicked"
+            android:text="@string/button_share_key" />
+
+        <Button
+            android:id="@+id/buttonKeyReceive"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onReceiveButtonClicked"
+            android:text="@string/button_receive_key" />
+    </LinearLayout>
+    
+     <Button
+         android:id="@+id/buttonContinue"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+     	 android:layout_below="@+id/linearLayoutSendReceiveButtons"
+         android:onClick="onButtonContinueClicked"
+         android:enabled="false"
+         android:text="@string/button_continue" />
+
+    <ListView
+        android:id="@+id/listViewChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayoutInterfaceSelector"
+        android:layout_below="@+id/buttonContinue" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutInterfaceSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_interface"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/radioBarcodes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/interface_barcodes" />
+
+            <RadioButton
+                android:id="@+id/radioNfc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/interface_nfc" />
+            
+        </RadioGroup>
+    </LinearLayout>
+
+</RelativeLayout>

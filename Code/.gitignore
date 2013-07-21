@@ -1,0 +1,8 @@
+*.class
+MultiChannelMiddleware/bin
+MultiChannelMiddleware/gen
+AndroidRemoteSlideshowClient/bin
+AndroidRemoteSlideshowClient/gen
+Zxing/bin
+Zxing/gen
+.metadata
